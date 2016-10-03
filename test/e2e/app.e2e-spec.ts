@@ -1,7 +1,7 @@
 
-describe('QuickStart E2E Tests', function () {
+describe('YATDA E2E Tests', function () {
 
-  let expectedMsg = 'My First Angular App';
+  let expectedMsg = 'Yet Another To Do App';
 
 
   beforeEach(function () {
