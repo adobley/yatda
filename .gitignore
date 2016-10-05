@@ -1,5 +1,3 @@
-.idea
-typings/**
 node_modules
 jspm_packages
 link-checker-results.txt
@@ -9,7 +7,12 @@ link-checker-results.txt
 _test-output
 _temp
 npm-debug.log
-dist/**
+.idea/
+.gradle/
+dist/
+typings/
+build/
+yatda.iml
 
 !karma*.js
 !protractor*.js
