@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { ToDoService } from './todo/todo.service';
+import { ToDosComponent } from './todos/todos.component';
 
 @NgModule({
   imports: [ BrowserModule, HttpModule ],
-  declarations: [ AppComponent ],
-  providers: [ ToDoService ],
-  bootstrap: [ AppComponent ]
+  declarations: [ AppComponent, ToDosComponent ],
+  exports: [ AppComponent, ToDosComponent ],
+  bootstrap: [ AppComponent, ToDosComponent ]
 })
 export class AppModule { }

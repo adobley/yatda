@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { ToDoService } from '../../app/todo/todo.service';
-import { ToDo } from '../../app/todo/todo';
+import { ToDoService } from '../../app/todos/todo.service';
+import { ToDo } from '../../app/todos/todo.model';
 
 import { TestBed, inject, getTestBed, async } from '@angular/core/testing';
 import { BaseRequestOptions, Http, XHRBackend, HttpModule, Response, ResponseOptions } from '@angular/http';

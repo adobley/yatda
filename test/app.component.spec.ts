@@ -14,7 +14,7 @@ describe('Smoke test', () => {
   });
 });
 
-describe('AppComponent with TCB', function () {
+describe('AppComponent', function () {
   beforeEach(() => {
     TestBed.configureTestingModule({declarations: [AppComponent]});
   });
