@@ -13,6 +13,7 @@ dist/
 typings/
 build/
 yatda.iml
+*/.DS_Store
 
 !karma*.js
 !protractor*.js
