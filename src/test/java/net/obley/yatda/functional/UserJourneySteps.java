@@ -2,41 +2,50 @@ package net.obley.yatda.functional;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-public class UserJourneySteps {
-
-  private static WebDriver driver;
-  private static final String EXPECTED_URL = "http://localhost:3000/";
-  private static final String EXPECTED_TITLE = "Yet Another To Do App";
+public class UserJourneySteps extends BaseFlow {
 
   @Before
-  public void setUp() {
-    driver = new FirefoxDriver();
-    driver.navigate().to(EXPECTED_URL);
+  public void setUpUserJourney() {
+    setUp();
   }
+
+  @After
+  public static void tearDownUserJourney() {
+    driver.quit();
+  }
+
 
   @When("^I am on the ToDo Page$")
   public void iAmOnTheToDoPage() {
-    assertThat(driver.getCurrentUrl(), is(EXPECTED_URL));
+    assertThat(driver.getCurrentUrl(), is(TODO_PAGE_URL));
   }
 
   @Then("^I see the ToDo title$")
   public void iSeeTheToDoTitle() {
-    assertThat(driver.findElement(By.tagName("h1")).getText(), is(EXPECTED_TITLE));
+    assertThat(elementByIdContainsText("title", TODO_PAGE_TITLE), is(true));
   }
 
-  @After
-  public static void after() {
-    driver.quit();
+  @When("^I write a ToDo to \"([^\"]*)\"$")
+  public void iWriteAToDo(String toDo) {
+    driver.findElement(By.id("new-todo")).sendKeys(toDo);
   }
+
+  @And("^I click the add button$")
+  public void iClickTheAddButton() {
+    clickOnElementWithID("add-todo");
+  }
+
+//  @Then("^I see \"([^\"]*)\" in the list$")
+//  public void iSeeToDoInTheList(String toDo) {
+//
+//  }
 
 }

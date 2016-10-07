@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'yatd-app',
     template: `
-    <h1>{{title}}</h1>
+    <h1 id="title">{{title}}</h1>
     `
 })
 export class AppComponent {

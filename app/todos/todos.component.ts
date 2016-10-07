@@ -5,13 +5,15 @@ import { ToDoService } from './todo.service';
 @Component({
   selector: 'todos',
   template: `
-    <ul>
-      <li *ngFor="let toDo of toDos">
-        <label><input type="checkbox"></label> {{toDo.text}}
-      </li>
-    </ul>
+      <input id="new-todo" placeholder="New To Do" />
+      <button id="add-todo">Add</button>
+      <ul>
+        <li *ngFor="let toDo of toDos">
+          <label><input type="checkbox"></label> {{toDo.text}}
+        </li>
+      </ul>
     `,
-    providers: [ ToDoService ]
+  providers: [ ToDoService ]
 })
 export class ToDosComponent implements OnInit {
 
